@@ -1,1 +1,1 @@
-# Cartoon-Database
+# Cartoon-Collection
