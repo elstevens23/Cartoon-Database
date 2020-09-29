@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 62.5%; /*This creates this conversion (1em = 10px)*/
+    background: #9186FF;
+}
+
+@font-face {
+    font-family: "Baloo Tammudu";
+    src: url(BalooTammudu2-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Cartoon Font";
+    src: url(cartoon-font.ttf);
+}
+
+.mainTitle {
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Cartoon Font", sans-serif;
+}
+
+.characters {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0 100px 0 100px;
+}
+
+.container {
+    text-align: center;
+    background: #FF88DC;
+    border: solid #000000;
+    border-radius: 15%;
+    margin: 10px;
+}
+
+.characters img {
+    height: 400px;
+    text-align: center;
+}
