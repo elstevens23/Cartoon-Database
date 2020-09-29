@@ -19,6 +19,5 @@ function connect_db($collectionName)
     $query = $db->prepare('SELECT  `cartoons`.`character_name`, `TVshows`.`name`, `IQ`, `image` FROM `cartoons`
     JOIN `TVshows` ON `cartoons`.`TVshow_id` = `TVshows`.`id`;');
     $query->execute();
-    $cartoons = $query->fetchAll();
-    return $cartoons;
+    return $query->fetchAll();
 }
