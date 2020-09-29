@@ -7,7 +7,7 @@
 #
 # Host: 127.0.01 (MySQL 5.7.31)
 # Database: MyCollection
-# Generation Time: 2020-09-28 13:20:18 +0000
+# Generation Time: 2020-09-29 14:38:14 +0000
 # ************************************************************
 
 
@@ -27,17 +27,17 @@ DROP TABLE IF EXISTS `cartoons`;
 
 CREATE TABLE `cartoons` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `character_name` varchar(255) NOT NULL DEFAULT '',
   `TVshow_id` int(11) DEFAULT NULL,
   `IQ` int(11) DEFAULT NULL,
-  `images` varchar(255) DEFAULT NULL,
+  `image` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `cartoons` WRITE;
 /*!40000 ALTER TABLE `cartoons` DISABLE KEYS */;
 
-INSERT INTO `cartoons` (`id`, `name`, `TVshow_id`, `IQ`, `images`)
+INSERT INTO `cartoons` (`id`, `character_name`, `TVshow_id`, `IQ`, `image`)
 VALUES
 	(1,'Rick Sanchez',1,300,'rick.jpg'),
 	(2,'Morty Smith',1,95,'morty.jpg'),
@@ -61,7 +61,7 @@ DROP TABLE IF EXISTS `TVshows`;
 
 CREATE TABLE `TVshows` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
