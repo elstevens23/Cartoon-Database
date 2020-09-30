@@ -9,7 +9,7 @@
  *
  */
 
-function connect_db($collectionName)
+function connect_db_return_collection($collectionName)
 {
     $db = new PDO('mysql:host=db;dbname=' . $collectionName,'root', 'password'); // initialise the db connection
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -30,19 +30,17 @@ function connect_db($collectionName)
  *
  */
 
-function eachCharacter(array $cartoons): string
+function eachCharacter(array $character): string
 {
     $characterHtmlElementsString = '';
-    foreach ($cartoons as $character) {
-        $characterImageElement = '<img src="' . $character['image'] . '" alt="Picture of ' . $character['character_name'] . '">';
-        $characterNameElement = $character['character_name'];
-        $characterTvShowElement = $character['name'];
-        $characterIqElement = $character['IQ'];
-        $characterHtmlElement = '<div class="container">' . $characterImageElement . "<h2>Name: " . $characterNameElement . '</h2>' . "<h2>TV Show: " . $characterTvShowElement . '</h2>' . "<h2>IQ: " . $characterIqElement . '</h2>' . '</div>';
-        $characterHtmlElementsString .= $characterHtmlElement;
-        if (!isset($character['character_name']) || !isset($character['IQ']) || !isset($character['name']) || !isset($character['image'])) {
-            return false;
-        };
+    $characterImageElement = '<img src="' . $character['image'] . '" alt="Picture of ' . $character['character_name'] . '">';
+    $characterNameElement = $character['character_name'];
+    $characterTvShowElement = $character['name'];
+    $characterIqElement = $character['IQ'];
+    $characterHtmlElement = '<div class="container">' . $characterImageElement . "<h2>Name: " . $characterNameElement . '</h2>' . "<h2>TV Show: " . $characterTvShowElement . '</h2>' . "<h2>IQ: " . $characterIqElement . '</h2>' . '</div>';
+    $characterHtmlElementsString .= $characterHtmlElement;
+    if (!isset($character['character_name']) || !isset($character['IQ']) || !isset($character['name']) || !isset($character['image'])) {
+        return '';
     };
     return $characterHtmlElementsString;
 }
