@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cartoon Collection</title>
+    <link href="input-newdata-form.php" type="text/php" rel="stylesheet">
     <link href="cartoons-stylesheet.css" type="text/css" rel="stylesheet">
     <link href="normalize.css" type="text/css" rel="stylesheet">
     <link href="cartoon-font.ttf" type="text/ttf" rel="stylesheet">
@@ -22,10 +23,12 @@
 
 include ('functions.php');
 
-$cartoons = connect_db('MyCollection');
+$cartoons = connect_db_return_collection('MyCollection');
 
 echo '<div class="characters">';
-    echo eachCharacter($cartoons);
+     foreach ($cartoons as $character) {
+         echo eachCharacter($cartoons);
+     }
 echo '</div>';
 
 ?>
