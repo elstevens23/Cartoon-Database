@@ -1,5 +1,35 @@
 <?php
 
+/*
+ * Connects to the database, setting the attribute and executing the query by fetching all the data
+ *
+ * @param $collectionName refers to the database name, referenced through the function connect_db on the index.php file
+ *
+ * @return the new PDO, setting up the connection between the php file and the database
+ *
+ */
+
+function connect_db($collectionName)
+{
+    $db = new PDO('mysql:host=db;dbname=' . $collectionName,'root', 'password'); // initialise the db connection
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $query = $db->prepare('SELECT  `cartoons`.`character_name`, `TVshows`.`name`, `IQ`, `image` FROM `cartoons`
+    JOIN `TVshows` ON `cartoons`.`TVshow_id` = `TVshows`.`id`;');
+    $query->execute();
+    return $query->fetchAll();
+}
+
+/*
+ * This takes the given array $cartoons, ensures it is a string, and concatenates each variable, connecting
+ * each bit of data from the database, to give the $character an image, name, TV show name and IQ
+ *
+ * @param $cartoons the array, from the database, which is being passed in this function
+ *
+ * @return this returns the variable $characterHtmlElementsString which is a concatenated string with each separate stat
+ * about each character
+ *
+ */
+
 function eachCharacter(array $cartoons): string
 {
     $characterHtmlElementsString = '';
@@ -15,14 +45,4 @@ function eachCharacter(array $cartoons): string
         };
     };
     return $characterHtmlElementsString;
-}
-
-function connect_db($collectionName)
-{
-    $db = new PDO('mysql:host=db;dbname=' . $collectionName,'root', 'password'); // initialise the db connection
-    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $query = $db->prepare('SELECT  `cartoons`.`character_name`, `TVshows`.`name`, `IQ`, `image` FROM `cartoons`
-    JOIN `TVshows` ON `cartoons`.`TVshow_id` = `TVshows`.`id`;');
-    $query->execute();
-    return $query->fetchAll();
 }
