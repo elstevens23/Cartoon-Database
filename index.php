@@ -23,11 +23,11 @@
 
 include ('functions.php');
 
-$cartoons = connect_db_return_collection('MyCollection');
+$cartoons = connect_db_return_collection('CartoonCollection');
 
 echo '<div class="characters">';
      foreach ($cartoons as $character) {
-         echo eachCharacter($cartoons);
+         echo eachCharacter($character);
      }
 echo '</div>';
 
