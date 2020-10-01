@@ -45,15 +45,18 @@ function extract_from_db(PDO $db): array {
 
 function eachCharacter(array $character): string
 {
-    if (!isset($character['character_name']) || !isset($character['IQ']) || !isset($character['name']) || !isset($character['image'])) {
-        return '';
-    }
     $characterHtmlElementsString = '';
-    $characterImageElement = '<img src="' . $character['image'] . '" alt="Picture of ' . $character['character_name'] . '">';
-    $characterNameElement = $character['character_name'];
-    $characterTvShowElement = $character['name'];
-    $characterIqElement = $character['IQ'];
-    $characterHtmlElement = '<div class="container">' . $characterImageElement . "<h2>Name: " . $characterNameElement . '</h2>' . "<h2>TV Show: " . $characterTvShowElement . '</h2>' . "<h2>IQ: " . $characterIqElement . '</h2>' . '</div>';
-    $characterHtmlElementsString .= $characterHtmlElement;
+    if (isset($character['character_name']) &&
+        isset($character['IQ']) &&
+        isset($character['name']) &&
+        isset($character['image'])
+    ) {
+        $characterImageElement = '<img src="' . $character['image'] . '" alt="Picture of ' . $character['character_name'] . '">';
+        $characterNameElement = $character['character_name'];
+        $characterTvShowElement = $character['name'];
+        $characterIqElement = $character['IQ'];
+        $characterHtmlElement = '<div class="container">' . $characterImageElement . "<h2>Name: " . $characterNameElement . '</h2>' . "<h2>TV Show: " . $characterTvShowElement . '</h2>' . "<h2>IQ: " . $characterIqElement . '</h2>' . '</div>';
+        $characterHtmlElementsString .= $characterHtmlElement;
+    }
     return $characterHtmlElementsString;
 }
