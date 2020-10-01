@@ -45,3 +45,37 @@ body {
     height: 400px;
     text-align: center;
 }
+
+.newCharacterButton {
+    padding: 40px 0 100px 0;
+    text-align: center;
+    font-family: "Cartoon Font", sans-serif;
+    font-size: 4rem;
+}
+
+.newCharacterButton button {
+    background-color: #FF88DC;
+    border-radius: 25px;
+    border: solid #FFC300;
+    padding: 10px;
+}
+
+/* CSS for HTML form page */
+
+.newCharacterTitle h1 {
+    font-family: "Cartoon Font", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.formNewCharacter {
+    text-align: center;
+    font-family: "Baloo Tammudu", sans-serif;
+    font-size: 1.5rem;
+}
+
+.submitCharacter submit {
+    padding: 10px;
+    text-align: center;
+    height: 20px;
+}
