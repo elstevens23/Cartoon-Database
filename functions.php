@@ -1,10 +1,5 @@
 <?php
 
-function foo()
-{
-    var_dump('foo');
-}
-
 /**
  * Connects to the database and setting the attribute
  *
