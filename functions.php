@@ -1,9 +1,14 @@
 <?php
 
-/*
+function foo()
+{
+    var_dump('foo');
+}
+
+/**
  * Connects to the database and setting the attribute
  *
- * @param $collectionName refers to the database name, referenced through the function connect_db on the index.php file
+ * @param $dbName refers to the database name, referenced through the function connect_db on the index.php file
  *
  * @return the new PDO, setting up the connection between the php file and the database
  *
@@ -13,10 +18,11 @@ function connect_db(string $dbName): PDO
 {
     $db = new PDO('mysql:host=db;dbname=' . $dbName,'root', 'password'); // initialise the db connection
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $db;
 }
 
-/*
+/**
  * Executes the query by fetching all the data, using the query code written below
  *
  * @param PDO $db links to the function above, which connects to the database
@@ -33,15 +39,15 @@ function extract_from_db(PDO $db): array
     return $query->fetchAll();
 }
 
-/*
+/**
  * This takes the given array $cartoons, ensures it is a string, and concatenates each variable, connecting
  * each bit of data from the database, to give the $character an image, name, TV show name and IQ
  *
- * @param $cartoons the array, from the database, which is being passed in this function
+ * @param array $character takes each property of the character's name, TV show name, image and IQ, storing each one in
+ * a variable of their own
  *
  * @return this returns the variable $characterHtmlElementsString which is a concatenated string with each separate stat
  * about each character
- *
  */
 
 function eachCharacter(array $character): string
@@ -61,4 +67,38 @@ function eachCharacter(array $character): string
         $characterHtmlElementsString .= $characterHtmlElement;
     }
     return $characterHtmlElementsString;
+}
+
+
+
+/**
+ * this extracts the TV shows' names
+ *
+ * @param PDO $db this extracts from the database and returns in an associative array
+ *
+ * @return array an array of the TV show names
+ *
+ */
+
+function extract_tvShow_from_db(PDO $db): array
+{
+    $query = $db->prepare('SELECT `id`, `name` FROM `TVshows`;');
+    $query->execute();
+    return $query->fetchAll();
+}
+
+
+/**
+ * This adds an array of given values of a new character to the database
+ *
+ * @param array $newInputArray this is the array of the character's values being added to the db
+ *
+ * @param PDO $db this is the database that the values will be added to
+ *
+ */
+
+function addNewItem_to_db (array $newInputArray, PDO $db) {
+    $query = $db->prepare('INSERT INTO `cartoons`(`character_name`, `TVshow_id`, `IQ`) 
+VALUES (:characterName, :tvShowName, :characterIq);');
+    $query->execute($newInputArray);
 }
