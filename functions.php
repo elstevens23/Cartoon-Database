@@ -98,7 +98,7 @@ function extract_tvShow_from_db(PDO $db): array
  */
 
 function addNewItem_to_db (array $newInputArray, PDO $db) {
-    $query = $db->prepare('INSERT INTO `cartoons`(`character_name`, `TVshow_id`, `IQ`) 
-VALUES (:characterName, :tvShowName, :characterIq);');
+    $query = $db->prepare('INSERT INTO `cartoons`(`character_name`, `TVshow_id`, `IQ`, `image`) 
+VALUES (:characterName, :tvShowName, :characterIq, :img_location);');
     $query->execute($newInputArray);
 }

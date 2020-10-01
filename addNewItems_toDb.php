@@ -8,6 +8,7 @@ if (
     isset($_POST['characterIq'])
 ) {
     $db = connect_db('CartoonCollection');
+    $_POST['img_location'] = 'imgs/default_image.jpg';
     addNewItem_to_db($_POST, $db);
     header("Location: index.php");
     exit();
