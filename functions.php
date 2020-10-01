@@ -9,7 +9,7 @@
  *
  */
 
-function connect_db($dbName)
+function connect_db(string $dbName): PDO
 {
     $db = new PDO('mysql:host=db;dbname=' . $dbName,'root', 'password'); // initialise the db connection
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -25,7 +25,8 @@ function connect_db($dbName)
  *
  */
 
-function extract_from_db(PDO $db): array {
+function extract_from_db(PDO $db): array
+{
     $query = $db->prepare('SELECT  `cartoons`.`character_name`, `TVshows`.`name`, `IQ`, `image` FROM `cartoons`
         JOIN `TVshows` ON `cartoons`.`TVshow_id` = `TVshows`.`id`;');
     $query->execute();
@@ -46,7 +47,8 @@ function extract_from_db(PDO $db): array {
 function eachCharacter(array $character): string
 {
     $characterHtmlElementsString = '';
-    if (isset($character['character_name']) &&
+    if (
+        isset($character['character_name']) &&
         isset($character['IQ']) &&
         isset($character['name']) &&
         isset($character['image'])
