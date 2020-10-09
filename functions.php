@@ -77,7 +77,7 @@ function eachCharacter(array $character): string
 
 function extract_tvShow_from_db(PDO $db): array
 {
-    $query = $db->prepare('SELECT `id`, `name` FROM `TVshows`;');
+    $query = $db->prepare('SELECT `id`, `name` FROM `TVshows` ORDER BY `name` ASC;');
     $query->execute();
     return $query->fetchAll();
 }
@@ -94,6 +94,6 @@ function extract_tvShow_from_db(PDO $db): array
 
 function addNewItem_to_db (array $newInputArray, PDO $db) {
     $query = $db->prepare('INSERT INTO `cartoons`(`character_name`, `TVshow_id`, `IQ`, `image`) 
-VALUES (:characterName, :tvShowName, :characterIq, :img_location);');
+VALUES (:characterName, :tvShowName, :characterIq, :characterImgLink);');
     $query->execute($newInputArray);
 }

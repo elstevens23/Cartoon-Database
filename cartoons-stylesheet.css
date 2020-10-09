@@ -54,17 +54,39 @@ body {
 }
 
 .newCharacterButton button {
+    text-decoration: none;
     background-color: #FF88DC;
     border-radius: 25px;
-    border: solid #FFC300;
     padding: 10px;
+    border-color: #FF88DC;
+    border-style: solid;
+}
+
+.newCharacterButton button:hover {
+    border-width: 5px;
+    border-color: #FFC300;
 }
 
 /* CSS for HTML form page */
 
+.goBack {
+    position: absolute;
+    padding: 35px 0 0 75px;
+}
+
+.goBack a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: "Baloo Tammudu", sans-serif;
+    color: black;
+}
+.goBack :hover {
+    color: #FFC300;
+}
+
 .newCharacterTitle h1 {
     font-family: "Cartoon Font", sans-serif;
-    font-size: 4rem;
+    font-size: 5rem;
     text-align: center;
 }
 
@@ -78,4 +100,5 @@ body {
     padding: 10px;
     text-align: center;
     height: 20px;
+    border-radius: 20%;
 }

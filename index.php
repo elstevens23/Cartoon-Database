@@ -36,9 +36,9 @@ echo '</div>';
 ?>
 
 <div class="newCharacterButton">
-<a href="addNewCharacters.php">
-    <button type="button">Add New Character</button>
-</a>
+    <a href="addNewCharacters.php">
+        <button type="button">Add New Character</button>
+    </a>
 </div>
 
 </body>
