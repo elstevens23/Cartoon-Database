@@ -54,4 +54,5 @@ class Index extends TestCase
         $result = eachCharacter($input);
         $this->assertEquals($expectedOutput, $result);
     }
+
 }
