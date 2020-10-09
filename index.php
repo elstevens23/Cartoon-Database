@@ -19,8 +19,6 @@ $cartoons = extract_from_db($db);
     <link href="BalooTammudu2-Regular.ttf" type="text/ttf" rel="stylesheet">
 </head>
 
-<body>
-
 <div class="mainTitle">
     <h1>My Cartoon Collection</h1>
 </div>
@@ -37,6 +35,11 @@ echo '</div>';
 
 ?>
 
+<div class="newCharacterButton">
+    <a href="addNewCharacters.php">
+        <button type="button">Add New Character</button>
+    </a>
+</div>
 
 </body>
 </html>
