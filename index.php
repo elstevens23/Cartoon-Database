@@ -13,8 +13,8 @@ $cartoons = extract_from_db($db);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cartoon Collection</title>
-    <link href="cartoons-stylesheet.css" type="text/css" rel="stylesheet">
     <link href="normalize.css" type="text/css" rel="stylesheet">
+    <link href="cartoons-stylesheet.css" type="text/css" rel="stylesheet">
     <link href="cartoon-font.ttf" type="text/ttf" rel="stylesheet">
     <link href="BalooTammudu2-Regular.ttf" type="text/ttf" rel="stylesheet">
 </head>

@@ -96,8 +96,44 @@ body {
     font-size: 1.5rem;
 }
 
-.submitCharacter submit {
+.groupCharacterName {
+    display: block;
     padding: 10px;
+}
+
+.groupCharacterName label {
+    display: block;
+}
+
+.groupTvShowName {
+    display: block;
+    padding: 10px;
+}
+
+.groupTvShowName label {
+    display: block;
+}
+
+.groupCharacterIq {
+    display: block;
+    padding: 10px;
+}
+
+.groupCharacterIq label {
+    display: block;
+}
+
+.groupCharacterImgLink {
+    display: block;
+    padding: 10px;
+}
+
+.groupCharacterImgLink label {
+    display: block;
+}
+
+.submitCharacter submit {
+    padding: 20px;
     text-align: center;
     height: 20px;
     border-radius: 20%;
