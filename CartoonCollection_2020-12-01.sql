@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # https://github.com/sequelpro/sequelpro
 #
-# Host: 127.0.01 (MySQL 5.7.31)
-# Database: MyCollection
-# Generation Time: 2020-09-29 14:38:14 +0000
+# Host: 127.0.0.1 (MySQL 5.7.31)
+# Database: CartoonCollection
+# Generation Time: 2020-12-01 18:17:17 +0000
 # ************************************************************
 
 
@@ -30,7 +30,7 @@ CREATE TABLE `cartoons` (
   `character_name` varchar(255) NOT NULL DEFAULT '',
   `TVshow_id` int(11) DEFAULT NULL,
   `IQ` int(11) DEFAULT NULL,
-  `image` varchar(255) NOT NULL DEFAULT '',
+  `image` varchar(1000) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,14 +41,14 @@ INSERT INTO `cartoons` (`id`, `character_name`, `TVshow_id`, `IQ`, `image`)
 VALUES
 	(1,'Rick Sanchez',1,300,'rick.jpg'),
 	(2,'Morty Smith',1,95,'morty.jpg'),
-	(3,'Spongebob Squarepants',3,85,'spongebob.jpg'),
-	(4,'Patrick Star',3,55,'patrick.jpg'),
-	(5,'Homer Simpson',5,55,'homer.jpg'),
-	(6,'Lisa Simpson',5,159,'lisa.jpg'),
-	(7,'Scooby Doo',7,35,'scooby-doo.jpg'),
-	(8,'Shaggy Rogers',7,70,'shaggy.jpg'),
-	(9,'Phineas Flynn',9,200,'phineas.jpg'),
-	(10,'Ferb Fletcher',9,200,'ferb.jpg');
+	(3,'Spongebob Squarepants',2,85,'spongebob.jpg'),
+	(4,'Patrick Star',2,55,'patrick.jpg'),
+	(5,'Homer Simpson',3,55,'homer.jpg'),
+	(6,'Lisa Simpson',3,159,'lisa.jpg'),
+	(7,'Scooby Doo',4,35,'scooby-doo.jpg'),
+	(8,'Shaggy Rogers',4,70,'shaggy.jpg'),
+	(9,'Phineas Flynn',5,200,'phineas.jpg'),
+	(10,'Ferb Fletcher',5,200,'ferb.jpg');
 
 /*!40000 ALTER TABLE `cartoons` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -71,10 +71,30 @@ LOCK TABLES `TVshows` WRITE;
 INSERT INTO `TVshows` (`id`, `name`)
 VALUES
 	(1,'Rick and Morty'),
-	(3,'SpongeBob Squarepants'),
-	(5,'The Simpsons'),
-	(7,'Scooby-Doo'),
-	(9,'Phineas and Ferb');
+	(2,'SpongeBob Squarepants'),
+	(3,'The Simpsons'),
+	(4,'Scooby-Doo'),
+	(5,'Phineas and Ferb'),
+	(6,'Rugrats'),
+	(7,'Dora the Explorer'),
+	(8,'South Park'),
+	(9,'Big Mouth'),
+	(10,'BoJack Horseman'),
+	(11,'Family Guy'),
+	(12,'Futurama'),
+	(13,'American Dad'),
+	(14,'Adventure Time'),
+	(15,'Arthur'),
+	(16,'Horrid Henry'),
+	(17,'Shaun the Sheep'),
+	(18,'The Powerpuff Girls'),
+	(19,'Pokemon'),
+	(20,'Avatar: The Last Airbender'),
+	(21,'Horrid Henry'),
+	(22,'Dexter\'s Laboratory'),
+	(23,'Foster Home for Imaginary Friends'),
+	(24,'Courage the Cowardly Dog'),
+	(25,'The Grim Adventures of Billy and Mandy');
 
 /*!40000 ALTER TABLE `TVshows` ENABLE KEYS */;
 UNLOCK TABLES;

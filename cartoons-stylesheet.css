@@ -45,3 +45,96 @@ body {
     height: 400px;
     text-align: center;
 }
+
+.newCharacterButton {
+    padding: 40px 0 100px 0;
+    text-align: center;
+    font-family: "Cartoon Font", sans-serif;
+    font-size: 4rem;
+}
+
+.newCharacterButton button {
+    text-decoration: none;
+    background-color: #FF88DC;
+    border-radius: 25px;
+    padding: 10px;
+    border-color: #FF88DC;
+    border-style: solid;
+}
+
+.newCharacterButton button:hover {
+    border-width: 5px;
+    border-color: #FFC300;
+}
+
+/* CSS for HTML form page */
+
+.goBack {
+    position: absolute;
+    padding: 35px 0 0 75px;
+}
+
+.goBack a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: "Baloo Tammudu", sans-serif;
+    color: black;
+}
+.goBack :hover {
+    color: #FFC300;
+}
+
+.newCharacterTitle h1 {
+    font-family: "Cartoon Font", sans-serif;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.formNewCharacter {
+    text-align: center;
+    font-family: "Baloo Tammudu", sans-serif;
+    font-size: 1.5rem;
+}
+
+.groupCharacterName {
+    display: block;
+    padding: 10px;
+}
+
+.groupCharacterName label {
+    display: block;
+}
+
+.groupTvShowName {
+    display: block;
+    padding: 10px;
+}
+
+.groupTvShowName label {
+    display: block;
+}
+
+.groupCharacterIq {
+    display: block;
+    padding: 10px;
+}
+
+.groupCharacterIq label {
+    display: block;
+}
+
+.groupCharacterImgLink {
+    display: block;
+    padding: 10px;
+}
+
+.groupCharacterImgLink label {
+    display: block;
+}
+
+.submitCharacter submit {
+    padding: 20px;
+    text-align: center;
+    height: 20px;
+    border-radius: 20%;
+}
